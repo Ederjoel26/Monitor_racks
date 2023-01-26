@@ -1,0 +1,138 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Monitor_racks</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>Monitor_racks</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.monitor_racks</ApplicationId>
+		<ApplicationIdGuid>309d5259-4cc8-4c00-abce-190bcbd1659b</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<GoogleServicesJson Include="Platforms\Android\google-services.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#000" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Platforms\Android\google-services.json" />
+	  <None Remove="Resources\Images\energia.png" />
+	  <None Remove="Resources\Images\equis.png" />
+	  <None Remove="Resources\Images\focoapg.png" />
+	  <None Remove="Resources\Images\focopren.png" />
+	  <None Remove="Resources\Images\fondo2.png" />
+	  <None Remove="Resources\Images\fondoaslogic.png" />
+	  <None Remove="Resources\Images\gota10.png" />
+	  <None Remove="Resources\Images\gota20.png" />
+	  <None Remove="Resources\Images\gota30.png" />
+	  <None Remove="Resources\Images\gota40.png" />
+	  <None Remove="Resources\Images\gota50.png" />
+	  <None Remove="Resources\Images\gota60.png" />
+	  <None Remove="Resources\Images\gota70.png" />
+	  <None Remove="Resources\Images\gota80.png" />
+	  <None Remove="Resources\Images\gota90.png" />
+	  <None Remove="Resources\Images\gotallena.png" />
+	  <None Remove="Resources\Images\gotamedia.png" />
+	  <None Remove="Resources\Images\gotauncuarto.png" />
+	  <None Remove="Resources\Images\gotavacia.png" />
+	  <None Remove="Resources\Images\humedad.png" />
+	  <None Remove="Resources\Images\logoaslogic.png" />
+	  <None Remove="Resources\Images\puertacerr.png" />
+	  <None Remove="Resources\Images\puertaopen.png" />
+	  <None Remove="Resources\Images\rayocol.png" />
+	  <None Remove="Resources\Images\serv.jpg" />
+	  <None Remove="Resources\Images\termo1.png" />
+	  <None Remove="Resources\Images\termo2.png" />
+	  <None Remove="Resources\Images\termo3.png" />
+	  <None Remove="Resources\Images\termo4.png" />
+	  <None Remove="Resources\Images\termo5.png" />
+	  <None Remove="Resources\Images\termofull.png" />
+	  <None Remove="Resources\Images\termomedio.png" />
+	  <None Remove="Resources\Images\termometro.png" />
+	  <None Remove="Resources\Images\termovacio.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <GoogleServicesJson Include="Platforms\Android\google-services.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Plugin.CloudFirestore" Version="4.1.0" />
+		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Login.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Principal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Rack.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RackHorizontal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Servicios.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Site.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SiteHorizontal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+	  <PackageReference Include="Xamarin.Firebase.Messaging">
+	    <Version>123.1.1</Version>
+	  </PackageReference>
+	  <PackageReference Include="Xamarin.GooglePlayServices.Base">
+	    <Version>118.1.0</Version>
+	  </PackageReference>
+	</ItemGroup>
+
+</Project>

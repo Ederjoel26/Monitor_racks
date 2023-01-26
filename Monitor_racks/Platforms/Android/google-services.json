@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982885224284",
+    "project_id": "aslogic-monitor",
+    "storage_bucket": "aslogic-monitor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982885224284:android:82e72fb63e73d7a422bb99",
+        "android_client_info": {
+          "package_name": "com.companyname.monitor_racks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982885224284-n3kk0854p1qvukeqb8r7c3h493nauq0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvX7tppmCyRz57u1cOXph0crkbYrr_j6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982885224284-n3kk0854p1qvukeqb8r7c3h493nauq0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
