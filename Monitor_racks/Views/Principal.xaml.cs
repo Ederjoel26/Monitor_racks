@@ -4,15 +4,12 @@ public partial class Principal : ContentPage
 {
     private double fWidth = 0;
     private double fHeight = 0;
-
     public Principal()
     {
         InitializeComponent();
 
         fWidth = Width;
         fHeight = Height;
-
-        ActualizarVista();
     }
 
     protected override void OnSizeAllocated(double width, double height)
@@ -44,87 +41,87 @@ public partial class Principal : ContentPage
 
     private void ActualizarVista()
     {
-        gPrincipal.RowDefinitions.Clear();
-        gPrincipal.ColumnDefinitions.Clear();
-        gPrincipal.Children.Clear();
+        gPrincipal?.RowDefinitions.Clear();
+        gPrincipal?.ColumnDefinitions.Clear();
+        gPrincipal?.Children.Clear();
 
         if (fWidth > fHeight)
         {
-            ActualizarALandscapteLayout();
+            gPrincipal?.Add(ActualizarALandscapteLayout(), 0, 1);
         }
         else
         {
-            ActualizarAPortraitLayout();
+            gPrincipal?.Add(ActualizarAPortraitLayout(), 0, 1);
         }
     }
 
-    private void ActualizarALandscapteLayout()
+    private Grid ActualizarALandscapteLayout()
     {
         InicializarTitulo();
 
-        Grid gSite = new Grid();
-
-        gSite.AddColumnDefinition(new ColumnDefinition { Width = new GridLength(33, GridUnitType.Star) });
-        gSite.AddColumnDefinition(new ColumnDefinition { Width = new GridLength(33, GridUnitType.Star) });
-        gSite.AddColumnDefinition(new ColumnDefinition { Width = new GridLength(33, GridUnitType.Star) });
+        Grid gSite = new Grid
+        {
+            ColumnDefinitions =
+            {
+                new ColumnDefinition { Width = new GridLength(33, GridUnitType.Star) },
+                new ColumnDefinition { Width = new GridLength(33, GridUnitType.Star) },
+                new ColumnDefinition { Width = new GridLength(33, GridUnitType.Star) }
+            }
+        };
 
         Grid gSite1 = CrearSite("Site1", 1);
         Grid gSite2 = CrearSite("Site2", 2);
         Grid gSite3 = CrearSite("Site3", 3);
 
-        gSite.Children.Add(gSite1);
-        gSite.Children.Add(gSite2);
-        gSite.Children.Add(gSite3);
+        gSite.Add(gSite1, 0, 0);
+        gSite.Add(gSite2, 1, 0);
+        gSite.Add(gSite3, 2, 0);
 
-        gSite.SetColumn(gSite1, 0);
-        gSite.SetColumn(gSite2, 1);
-        gSite.SetColumn(gSite3, 2);
-
-        gPrincipal.Children.Add(gSite);
-        gPrincipal.SetRow(gSite, 1);
+        return gSite;
     }
 
-    private void ActualizarAPortraitLayout()
+    private Grid ActualizarAPortraitLayout()
     {
         InicializarTitulo();
 
-        Grid gSite = new Grid();
-
-        gSite.AddRowDefinition(new RowDefinition { Height = new GridLength(33, GridUnitType.Star) });
-        gSite.AddRowDefinition(new RowDefinition { Height = new GridLength(33, GridUnitType.Star) });
-        gSite.AddRowDefinition(new RowDefinition { Height = new GridLength(33, GridUnitType.Star) });
-        gSite.AddColumnDefinition(new ColumnDefinition { Width = new GridLength(10, GridUnitType.Star) });
-        gSite.AddColumnDefinition(new ColumnDefinition { Width = new GridLength(80, GridUnitType.Star) });
-        gSite.AddColumnDefinition(new ColumnDefinition { Width = new GridLength(10, GridUnitType.Star) });
+        Grid gSite = new Grid()
+        {
+            RowDefinitions =
+            {
+                new RowDefinition { Height = new GridLength(33, GridUnitType.Star) },
+                new RowDefinition { Height = new GridLength(33, GridUnitType.Star) },
+                new RowDefinition { Height = new GridLength(33, GridUnitType.Star) },
+            },
+            ColumnDefinitions =
+            {
+                new ColumnDefinition { Width = new GridLength(10, GridUnitType.Star) },
+                new ColumnDefinition { Width = new GridLength(80, GridUnitType.Star) },
+                new ColumnDefinition { Width = new GridLength(10, GridUnitType.Star) },
+            }
+        };
 
         Grid gSite1 = CrearSite("Site 1", 1);
         Grid gSite2 = CrearSite("Site 2", 2);
         Grid gSite3 = CrearSite("Site 3", 3);
 
-        gSite.Children.Add(gSite1);
-        gSite.Children.Add(gSite2);
-        gSite.Children.Add(gSite3);
+        gSite.Add(gSite1, 1, 0);
+        gSite.Add(gSite2, 1, 1);
+        gSite.Add(gSite3, 1, 2);
 
-        gSite.SetRow(gSite1, 0);
-        gSite.SetColumn(gSite1, 1);
-        gSite.SetRow(gSite2, 1);
-        gSite.SetColumn(gSite2, 1);
-        gSite.SetRow(gSite3, 2);
-        gSite.SetColumn(gSite3, 1);
-
-        gPrincipal.Children.Add(gSite);
-        gPrincipal.SetRow(gSite, 1);
+        return gSite;
     }
 
     private Grid CrearSite(string Titulo, int numeroSite)
     {
         Grid gSite1 = new Grid()
         {
-            Margin = 5
+            Margin = 5,
+            RowDefinitions =
+            {
+                new RowDefinition { Height = new GridLength(85, GridUnitType.Star) },
+                new RowDefinition { Height = new GridLength(15, GridUnitType.Star) },
+            }
         };
-
-        gSite1.AddRowDefinition(new RowDefinition { Height = new GridLength(85, GridUnitType.Star) });
-        gSite1.AddRowDefinition(new RowDefinition { Height = new GridLength(15, GridUnitType.Star) });
 
         ImageButton imgbtnSite1 = new ImageButton
         {
@@ -151,11 +148,8 @@ public partial class Principal : ContentPage
             FontSize = 15
         };
 
-        gSite1.Children.Add(imgbtnSite1);
-        gSite1.Children.Add(lblTituloSite1);
-
-        gSite1.SetRow(imgbtnSite1, 0);
-        gSite1.SetRow(lblTituloSite1, 1);
+        gSite1.Add(imgbtnSite1, 0, 0);
+        gSite1.Add(lblTituloSite1, 0, 1);
 
         return gSite1;
     }
@@ -174,7 +168,6 @@ public partial class Principal : ContentPage
             FontSize = 25
         };
 
-        gPrincipal.Children.Add(lblTitulo);
-        gPrincipal.SetRow(lblTitulo, 0);
+        gPrincipal.Add(lblTitulo, 0, 0);
     }
 }

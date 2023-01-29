@@ -16,8 +16,6 @@ public partial class Login : ContentPage
 
         fWidth = Width;
         fHeight = Height;
-
-        ActualizarVista();
     }
 
     protected override void OnSizeAllocated(double width, double height)
@@ -35,22 +33,22 @@ public partial class Login : ContentPage
 
     private void ActualizarVista()
     {
-        gLogin.RowDefinitions.Clear();
-        gLogin.ColumnDefinitions.Clear();
-        gLogin.Children.Clear();
+        gLogin?.RowDefinitions.Clear();
+        gLogin?.ColumnDefinitions.Clear();
+        gLogin?.Children.Clear();
 
         if (fWidth > fHeight)
         {
-            ActualizarLayout(5, 90, 5, 20, 60, 20);
+            gLogin?.Add(ActualizarLayout(5, 90, 5, 20, 60, 20), 1, 1);
         }
         else
         {
-            ActualizarLayout(25, 50, 25, 10, 80, 10);
+            gLogin?.Add(ActualizarLayout(25, 50, 25, 10, 80, 10), 1, 1);
         }
     }
 
 
-    private void ActualizarLayout(int fRow, int sRow, int tRow, int fCol, int sCol, int tCol)
+    private Frame ActualizarLayout(int fRow, int sRow, int tRow, int fCol, int sCol, int tCol)
     {
         gLogin.AddRowDefinition(new RowDefinition { Height = new GridLength(fRow, GridUnitType.Star) });
         gLogin.AddRowDefinition(new RowDefinition { Height = new GridLength(sRow, GridUnitType.Star) });
@@ -66,12 +64,17 @@ public partial class Login : ContentPage
             BorderColor = Color.Parse("black")
         };
 
-        Grid gContainer = new Grid();
-        gContainer.AddRowDefinition(new RowDefinition { Height = new GridLength(20, GridUnitType.Star) });
-        gContainer.AddRowDefinition(new RowDefinition { Height = new GridLength(20, GridUnitType.Star) });
-        gContainer.AddRowDefinition(new RowDefinition { Height = new GridLength(20, GridUnitType.Star) });
-        gContainer.AddRowDefinition(new RowDefinition { Height = new GridLength(20, GridUnitType.Star) });
-        gContainer.AddRowDefinition(new RowDefinition { Height = new GridLength(20, GridUnitType.Star) });
+        Grid gContainer = new Grid
+        {
+            RowDefinitions =
+            {
+                new RowDefinition { Height = new GridLength(20, GridUnitType.Star) },
+                new RowDefinition { Height = new GridLength(20, GridUnitType.Star) },
+                new RowDefinition { Height = new GridLength(20, GridUnitType.Star) },
+                new RowDefinition { Height = new GridLength(20, GridUnitType.Star) },
+                new RowDefinition { Height = new GridLength(20, GridUnitType.Star) },
+            }
+        };
 
         Label lblTitulo = new Label
         {
@@ -116,24 +119,15 @@ public partial class Login : ContentPage
         btnEntrar.Clicked += (sender, e) => Button_Clicked(sender, e);
         btnHuella.Clicked += (sender, e) => Button_Clicked_1(sender, e);
 
-        gContainer.Children.Add(lblTitulo);
-        gContainer.Children.Add(eUsuario);
-        gContainer.Children.Add(eContra);
-        gContainer.Children.Add(btnEntrar);
-        gContainer.Children.Add(btnHuella);
-
-        gContainer.SetRow(lblTitulo, 0);
-        gContainer.SetRow(eUsuario, 1);
-        gContainer.SetRow(eContra, 2);
-        gContainer.SetRow(btnEntrar, 3);
-        gContainer.SetRow(btnHuella, 4);
+        gContainer.Add(lblTitulo, 0, 0);
+        gContainer.Add(eUsuario, 0, 1);
+        gContainer.Add(eContra, 0, 2);
+        gContainer.Add(btnEntrar, 0, 3);
+        gContainer.Add(btnHuella, 0, 4);
 
         fContainer.Content = gContainer;
 
-        gLogin.Children.Add(fContainer);
-
-        gLogin.SetRow(fContainer, 1);
-        gLogin.SetColumn(fContainer, 1);
+        return fContainer;
     }
 
     private async void checkAvaliable()
@@ -148,6 +142,7 @@ public partial class Login : ContentPage
 
         var request = new AuthenticationRequestConfiguration("Favor de usar la huella dactilar.", "De lo contrario no tendrás acceso.");
         var result = await CrossFingerprint.Current.AuthenticateAsync(request);
+
         if (result.Authenticated)
         {
             await Shell.Current.GoToAsync("Principal");

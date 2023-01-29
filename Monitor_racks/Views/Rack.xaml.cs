@@ -115,7 +115,7 @@ public partial class Rack : ContentPage
             }
         };
 
-        imgValor.HeightRequest = 50;
+        imgValor.HeightRequest = 75;
 
         lblValor.VerticalOptions = LayoutOptions.Center;
         lblValor.HorizontalOptions = LayoutOptions.Center;
