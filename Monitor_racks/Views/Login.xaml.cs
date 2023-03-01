@@ -81,7 +81,7 @@ public partial class Login : ContentPage
             Text = "Inicio de sesion",
             HorizontalOptions = LayoutOptions.Center,
             VerticalOptions = LayoutOptions.Center,
-            FontSize = 25,
+            FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 50 : 25,
             TextColor = Color.Parse("black")
         };
 

@@ -59,7 +59,7 @@ public partial class RackHorizontal : ContentPage
         }
         else
         {
-            await Shell.Current.GoToAsync($"Principal", false);
+            await Shell.Current.GoToAsync("Principal", false);
             await Shell.Current.GoToAsync($"Rack?ID={ ID }&IDR={ IDR }");
         }
         Content = default;
@@ -110,8 +110,8 @@ public partial class RackHorizontal : ContentPage
             }
         };
 
-        imgValor.HeightRequest = 50;
-
+        imgValor.HeightRequest = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 100 : 50;
+        lblValor.FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 25 : 15;
         lblValor.VerticalOptions = LayoutOptions.Center;
         lblValor.HorizontalOptions = LayoutOptions.Center;
 

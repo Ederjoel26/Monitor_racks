@@ -20,7 +20,6 @@ public partial class Site : ContentPage
     private Image imgPRack3S1 = new Image(), imgERack3S1 = new Image(), imgLRack3S1 = new Image(), imgHRack3S1 = new Image(), imgTRack3S1 = new Image();
     private Image imgPRack4S1 = new Image(), imgERack4S1 = new Image(), imgLRack4S1 = new Image(), imgHRack4S1 = new Image(), imgTRack4S1 = new Image();
 
-
     private List<Label> lstRack1 = new List<Label>();
     private List<Label> lstRack2 = new List<Label>();
     private List<Label> lstRack3 = new List<Label>();
@@ -232,7 +231,8 @@ public partial class Site : ContentPage
             Text = $"Site { ID }",
             HorizontalOptions = LayoutOptions.Center,
             VerticalOptions = LayoutOptions.Center,
-            FontSize = 25
+            FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 50 : 25,
+            FontAutoScalingEnabled = true
         };
 
         gSite.Add(lblTitulo, 0, 0);

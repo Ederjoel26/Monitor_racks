@@ -2,7 +2,7 @@ using System.Net.NetworkInformation;
 
 namespace Monitor_racks.Views;
 
-public partial class Servicios : ContentPage
+public partial class ServiciosHorizontal : ContentPage
 {
     private string[] sIPAddress =
     {
@@ -20,7 +20,7 @@ public partial class Servicios : ContentPage
 
     private int Id = 0;
 
-    public Servicios()
+    public ServiciosHorizontal()
     {
         InitializeComponent();
 
@@ -87,19 +87,17 @@ public partial class Servicios : ContentPage
 
         if (fWidth > fHeight)
         {
-            await Shell.Current.GoToAsync("Principal", false);
-            await Shell.Current.GoToAsync("ServiciosHorizontal");
+            gServicios?.Add(ActualizarLanscapeLayout(), 0, 0);
         }
         else
         {
-            gServicios?.Add(ActualizarPortraitLayout(), 0, 1);
+            await Shell.Current.GoToAsync("Principal", false);
+            await Shell.Current.GoToAsync("Servicios");
         }
     }
 
-    private Frame ActualizarPortraitLayout()
+    private Frame ActualizarLanscapeLayout()
     {
-        InicializarTitulo();
-
         Frame fServiciosLayout = new Frame
         {
             BackgroundColor = Color.Parse("white"),
@@ -113,31 +111,31 @@ public partial class Servicios : ContentPage
         {
             RowDefinitions =
             {
-                new RowDefinition{ Height = new GridLength(20, GridUnitType.Star) },
-                new RowDefinition{ Height = new GridLength(20, GridUnitType.Star) },
-                new RowDefinition{ Height = new GridLength(20, GridUnitType.Star) },
-                new RowDefinition{ Height = new GridLength(20, GridUnitType.Star) },
-                new RowDefinition{ Height = new GridLength(20, GridUnitType.Star) },
+                new RowDefinition{ Height = new GridLength(50, GridUnitType.Star) },
+                new RowDefinition{ Height = new GridLength(50, GridUnitType.Star) },
             },
             ColumnDefinitions =
             {
-                new ColumnDefinition { Width = new GridLength(50, GridUnitType.Star) },
-                new ColumnDefinition { Width = new GridLength(50, GridUnitType.Star) }
+                new ColumnDefinition { Width = new GridLength(20, GridUnitType.Star) },
+                new ColumnDefinition { Width = new GridLength(20, GridUnitType.Star) },
+                new ColumnDefinition { Width = new GridLength(20, GridUnitType.Star) },
+                new ColumnDefinition { Width = new GridLength(20, GridUnitType.Star) },
+                new ColumnDefinition { Width = new GridLength(20, GridUnitType.Star) },
             },
             RowSpacing = 2,
             ColumnSpacing = 2
         };
 
         gServiciosLayout.Add(Servicio1, 0, 0);
-        gServiciosLayout.Add(EstatusServicio1, 1, 0);
-        gServiciosLayout.Add(Servicio2, 0, 1);
+        gServiciosLayout.Add(EstatusServicio1, 0, 1);
+        gServiciosLayout.Add(Servicio2, 1, 0);
         gServiciosLayout.Add(EstatusServicio2, 1, 1);
-        gServiciosLayout.Add(Servicio3, 0, 2);
-        gServiciosLayout.Add(EstatusServicio3, 1, 2);
-        gServiciosLayout.Add(Servicio4, 0, 3);
-        gServiciosLayout.Add(EstatusServicio4, 1, 3);
-        gServiciosLayout.Add(Servicio5, 0, 4);
-        gServiciosLayout.Add(EstatusServicio5, 1, 4);
+        gServiciosLayout.Add(Servicio3, 2, 0);
+        gServiciosLayout.Add(EstatusServicio3, 2, 1);
+        gServiciosLayout.Add(Servicio4, 3, 0);
+        gServiciosLayout.Add(EstatusServicio4, 3, 1);
+        gServiciosLayout.Add(Servicio5, 4, 0);
+        gServiciosLayout.Add(EstatusServicio5, 4, 1);
 
         fServiciosLayout.Content = gServiciosLayout;
 
@@ -165,22 +163,5 @@ public partial class Servicios : ContentPage
             lblEstatus.Text = "Error: se agotó el tiempo de respuesta";
             lblEstatus.BackgroundColor = Color.Parse("red");
         }
-    }
-
-    private void InicializarTitulo()
-    {
-        gServicios.AddRowDefinition(new RowDefinition { Height = new GridLength(5, GridUnitType.Star) });
-        gServicios.AddRowDefinition(new RowDefinition { Height = new GridLength(95, GridUnitType.Star) });
-
-        Label lblTitulo = new Label()
-        {
-            HorizontalOptions = LayoutOptions.Center,
-            VerticalOptions = LayoutOptions.Center,
-            FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 50 : 25,
-            Text = "Servicios",
-            FontAttributes = FontAttributes.Bold
-        };
-
-        gServicios.Add(lblTitulo, 0, 0);
     }
 }

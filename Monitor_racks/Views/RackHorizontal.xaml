@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Monitor_racks.Views.RackHorizontal"
              BackgroundImageSource="fondoaslogic.png"
-             Title="RackHorizontal">
+             Title="Rack">
     <ContentView/>
 </ContentPage>

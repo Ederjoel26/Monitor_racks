@@ -115,8 +115,8 @@ public partial class Rack : ContentPage
             }
         };
 
-        imgValor.HeightRequest = 75;
-
+        imgValor.HeightRequest = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 140 : 75;
+        lblValor.FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 25 : 15;
         lblValor.VerticalOptions = LayoutOptions.Center;
         lblValor.HorizontalOptions = LayoutOptions.Center;
 
@@ -143,7 +143,8 @@ public partial class Rack : ContentPage
             Text = $"Site {ID} Rack{IDR}",
             HorizontalOptions = LayoutOptions.Center,
             VerticalOptions = LayoutOptions.Center,
-            FontSize = 25
+            FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 50 : 25,
+            FontAutoScalingEnabled = true
         };
 
         gRack.Add(lblTitulo, 0, 0);

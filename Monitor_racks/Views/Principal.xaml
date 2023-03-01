@@ -5,6 +5,12 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="fondoaslogic.png"
              Title="Principal">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"
+                     Text="Servicios"
+                     IconImageSource="servicios.png" 
+                     Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentView>
         <Grid x:Name="gPrincipal">
         </Grid>

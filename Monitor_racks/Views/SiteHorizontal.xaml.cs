@@ -210,8 +210,8 @@ public partial class SiteHorizontal : ContentPage
             }
         };
 
-        imgValor.HeightRequest = 35;
-        lblValor.FontSize = 10;
+        imgValor.HeightRequest = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 70 : 35;
+        lblValor.FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 20 : 10 ;
         lblValor.VerticalOptions = LayoutOptions.Center;
         lblValor.HorizontalOptions = LayoutOptions.Center;
 

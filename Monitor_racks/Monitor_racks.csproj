@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Monitor_racks</ApplicationTitle>
+		<ApplicationTitle>Monitoreo ASLOGIC</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.monitor_racks</ApplicationId>
@@ -116,6 +116,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Servicios.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ServiciosHorizontal.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Site.xaml">

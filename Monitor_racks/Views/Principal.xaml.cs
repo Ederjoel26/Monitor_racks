@@ -1,3 +1,4 @@
+
 namespace Monitor_racks.Views;
 
 public partial class Principal : ContentPage
@@ -10,6 +11,20 @@ public partial class Principal : ContentPage
 
         fWidth = Width;
         fHeight = Height;
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        NetworkAccess accessType = Connectivity.Current.NetworkAccess;
+
+        if (accessType != NetworkAccess.Internet)
+        {
+            await DisplayAlert("No tiene acceso a internet.", "Favor de rectificar su conexión.", "Ok");
+            Thread.Sleep(1000);
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
     }
 
     protected override void OnSizeAllocated(double width, double height)
@@ -69,9 +84,9 @@ public partial class Principal : ContentPage
             }
         };
 
-        Grid gSite1 = CrearSite("Site1", 1);
-        Grid gSite2 = CrearSite("Site2", 2);
-        Grid gSite3 = CrearSite("Site3", 3);
+        Grid gSite1 = CrearSite("Site 1", 1);
+        Grid gSite2 = CrearSite("Site 2", 2);
+        Grid gSite3 = CrearSite("Site 3", 3);
 
         gSite.Add(gSite1, 0, 0);
         gSite.Add(gSite2, 1, 0);
@@ -145,7 +160,8 @@ public partial class Principal : ContentPage
             HorizontalOptions = LayoutOptions.Center,
             VerticalOptions = LayoutOptions.Center,
             FontAttributes = FontAttributes.Bold,
-            FontSize = 15
+            FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 25 : 15,
+            FontAutoScalingEnabled = false
         };
 
         gSite1.Add(imgbtnSite1, 0, 0);
@@ -165,9 +181,16 @@ public partial class Principal : ContentPage
             Text = "Selecciona un site",
             HorizontalOptions = LayoutOptions.Center,
             VerticalOptions = LayoutOptions.Center,
-            FontSize = 25
+            FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 50 : 25,
+            FontAutoScalingEnabled = false
         };
 
         gPrincipal.Add(lblTitulo, 0, 0);
     }
+
+    private void ToolbarItem_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("Servicios");
+    }
+
 }
