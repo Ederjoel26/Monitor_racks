@@ -68,35 +68,14 @@ public partial class Site : ContentPage
                 ? new List<Image> { imgRackHumedad4H, imgRackTemperatura4H, imgRackPuertas4H, imgRackLuz4H, imgRackElectricidad4H }
                 : new List<Image> { imgRackHumedad4V, imgRackTemperatura4V, imgRackPuertas4V, imgRackLuz4V, imgRackElectricidad4V };
 
-            clsRack.EmpezarEscuchar($"Site{ID}", "Rack1", lstlblRack1, lstimgRack1, false);
-            clsRack.EmpezarEscuchar($"Site{ID}", "Rack1", lstlblRack2, lstimgRack2, false);
-            clsRack.EmpezarEscuchar($"Site{ID}", "Rack1", lstlblRack3, lstimgRack3, false);
-            clsRack.EmpezarEscuchar($"Site{ID}", "Rack1", lstlblRack4, lstimgRack4, false);
-
-            if (fWidth > fHeight)
-            {
-                for (int i = 0; i < 5; i++)
-                {
-                    lstimgRack1[i].HeightRequest = 50;
-                    lstimgRack2[i].HeightRequest = 50;
-                    lstimgRack3[i].HeightRequest = 50;
-                    lstimgRack4[i].HeightRequest = 50;
-                }
-            }
-            else
-            {
-                for (int i = 0; i < 5; i++)
-                {
-                    lstimgRack1[i].HeightRequest = 40;
-                    lstimgRack2[i].HeightRequest = 40;
-                    lstimgRack3[i].HeightRequest = 40;
-                    lstimgRack4[i].HeightRequest = 40;
-                }
-            }
+            clsRack.EmpezarEscuchar($"Site{ID}", "Rack1", lstlblRack1, lstimgRack1, false, fWidth, fHeight);
+            clsRack.EmpezarEscuchar($"Site{ID}", "Rack1", lstlblRack2, lstimgRack2, false, fWidth, fHeight);
+            clsRack.EmpezarEscuchar($"Site{ID}", "Rack1", lstlblRack3, lstimgRack3, false, fWidth, fHeight);
+            clsRack.EmpezarEscuchar($"Site{ID}", "Rack1", lstlblRack4, lstimgRack4, false, fWidth, fHeight);
         }
     }
 
-    private async void ActualizarVista()
+    private void ActualizarVista()
     {
         if (fWidth > fHeight)
         {

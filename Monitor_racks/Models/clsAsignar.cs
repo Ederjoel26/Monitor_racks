@@ -8,7 +8,7 @@ namespace Monitor_racks.Models
 {
     public static class clsAsignar
     {
-        public static void Asignacion(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack, bool fRack)
+        public static void Asignacion(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack, bool fRack, double width = 0, double height = 0)
         {
             Puertas(oRack, oRackString, oImgRack);
             Energia(oRack, oRackString, oImgRack);
@@ -20,9 +20,9 @@ namespace Monitor_racks.Models
             {
                 oImgRack[i].HeightRequest = fRack
                     ? DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 140 : 75
-                    : DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 90 : 50;
+                    : DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 90 : width > height ? 30 : 50;
 
-                oRackString[i].FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 25 : 15;
+                oRackString[i].FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 25 : width > height ? 12 : 15;
                 oRackString[i].VerticalOptions = LayoutOptions.Center;
                 oRackString[i].HorizontalOptions = LayoutOptions.Center;
             }
@@ -30,44 +30,20 @@ namespace Monitor_racks.Models
 
         private static void Puertas(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack)
         {
-            if (oRack.Puertas == false)
-            {
-                oImgRack[0].Source = "puertacerr.png";
-                oRackString[0].Text = "Cerrada";
-            }
-            else
-            {
-                oImgRack[0].Source = "puertaopen.png";
-                oRackString[0].Text = "Abierta";
-            }
+            oImgRack[0].Source = !oRack.Puertas ? "puertacerr.png" : "puertaopen.png";
+            oRackString[0].Text = !oRack.Puertas ? "Cerrada" : "Abierta";
         }
 
         private static void Energia(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack)
         {
-            if (oRack.Energia == false)
-            {
-                oImgRack[1].Source = "energia.png";
-                oRackString[1].Text = "No hay energia";
-            }
-            else
-            {
-                oImgRack[1].Source = "rayocol.png";
-                oRackString[1].Text = "Hay energia";
-            }
+            oImgRack[1].Source = !oRack.Energia ? "energia.png" : "rayocol.png";
+            oRackString[1].Text = !oRack.Energia ? "No hay energia" : "Hay energia";
         }
 
         private static void Luz(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack)
         {
-            if (oRack.Luz == false)
-            {
-                oImgRack[2].Source = "focoapg.png";
-                oRackString[2].Text = "Apagada";
-            }
-            else
-            {
-                oImgRack[2].Source = "focopren.png";
-                oRackString[2].Text = "Encendida";
-            }
+            oImgRack[2].Source = !oRack.Luz ? "focoapg.png" : "focopren.png";
+            oRackString[2].Text = !oRack.Luz ? "Apagada" : "Encendida";
         }
 
         private static void Humedad(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack)
