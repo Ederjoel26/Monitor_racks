@@ -2,10 +2,143 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Monitor_racks.Views.Servicios"
-             BackgroundImageSource="fondoaslogic.png"
-             Title="Servicios">
-    <ContentView>
-        <Grid x:Name="gServicios">
-        </Grid>
-    </ContentView>
+             BackgroundImageSource="fondoaslogic.png">
+    <Grid>
+        <ContentView x:Name="cvVerticalServicios">
+            <Grid ColumnDefinitions="5*,90*,5*">
+                <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Margin="3"
+                           CornerRadius="10">
+                    <Grid ColumnDefinitions="50*,50*"
+                              RowDefinitions="20*,20*,20*,20*,20*"
+                              RowSpacing="5"
+                              ColumnSpacing="5">
+
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               x:Name="Servicio1V">
+
+                        </Label>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               x:Name="EstatusServicio1V">
+
+                        </Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               x:Name="Servicio2V">
+
+                        </Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               x:Name="EstatusServicio2V">
+
+                        </Label>
+                        <Label Grid.Row="2"
+                               Grid.Column="0"
+                               x:Name="Servicio3V">
+
+                        </Label>
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
+                               x:Name="EstatusServicio3V">
+
+                        </Label>
+                        <Label Grid.Row="3"
+                               Grid.Column="0"
+                               x:Name="Servicio4V">
+
+                        </Label>
+                        <Label Grid.Row="3"
+                               Grid.Column="1"
+                               x:Name="EstatusServicio4V">
+
+                        </Label>
+                        <Label Grid.Row="4"
+                               Grid.Column="0"
+                               x:Name="Servicio5V">
+
+                        </Label>
+                        <Label  Grid.Row="4"
+                                Grid.Column="1"
+                                x:Name="EstatusServicio5V">
+
+                        </Label>
+
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ContentView>
+        <ContentView x:Name="cvHorizontalServicios">
+            <Grid>
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Margin="3"
+                       CornerRadius="10">
+                    <Grid RowDefinitions="50*,50*"
+                          ColumnDefinitions="20*,20*,20*,20*,20*"
+                          RowSpacing="5"
+                          ColumnSpacing="5">
+                        
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               x:Name="Servicio1H">
+
+                        </Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               x:Name="EstatusServicio1H">
+
+                        </Label>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               x:Name="Servicio2H">
+
+                        </Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               x:Name="EstatusServicio2H">
+
+                        </Label>
+                        <Label Grid.Row="0"
+                               Grid.Column="2"
+                               x:Name="Servicio3H">
+
+                        </Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="2"
+                               x:Name="EstatusServicio3H">
+
+                        </Label>
+                        <Label Grid.Row="0"
+                               Grid.Column="3"
+                               x:Name="Servicio4H">
+
+                        </Label>
+                        <Label Grid.Row="1"
+                               Grid.Column="3"
+                               x:Name="EstatusServicio4H">
+
+                        </Label>
+                        <Label Grid.Row="0"
+                               Grid.Column="4"
+                               x:Name="Servicio5H">
+
+                        </Label>
+                        <Label Grid.Row="4"
+                               Grid.Column="4"
+                               x:Name="EstatusServicio5H">
+                        </Label>
+
+                    </Grid>
+                    
+                </Frame>
+            </Grid>
+        </ContentView>
+    </Grid>
 </ContentPage>

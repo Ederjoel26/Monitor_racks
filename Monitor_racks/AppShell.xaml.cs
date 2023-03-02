@@ -9,9 +9,6 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("Principal", typeof(Principal));
         Routing.RegisterRoute("Site", typeof(Site));
         Routing.RegisterRoute("Rack", typeof(Rack));
-        Routing.RegisterRoute("RackHorizontal", typeof(RackHorizontal));
-        Routing.RegisterRoute("SiteHorizontal", typeof(SiteHorizontal));
         Routing.RegisterRoute("Servicios", typeof(Servicios));
-        Routing.RegisterRoute("ServiciosHorizontal", typeof(ServiciosHorizontal));
     }
 }

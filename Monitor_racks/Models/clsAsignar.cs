@@ -8,13 +8,24 @@ namespace Monitor_racks.Models
 {
     public static class clsAsignar
     {
-        public static void Asignacion(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack)
+        public static void Asignacion(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack, bool fRack)
         {
             Puertas(oRack, oRackString, oImgRack);
             Energia(oRack, oRackString, oImgRack);
             Luz(oRack, oRackString, oImgRack);
             Humedad(oRack, oRackString, oImgRack);
             Temperatura(oRack, oRackString, oImgRack);
+
+            for (int i = 0; i < 5; i++)
+            {
+                oImgRack[i].HeightRequest = fRack
+                    ? DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 140 : 75
+                    : DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 90 : 50;
+
+                oRackString[i].FontSize = DeviceInfo.Current.Idiom == DeviceIdiom.Tablet ? 25 : 15;
+                oRackString[i].VerticalOptions = LayoutOptions.Center;
+                oRackString[i].HorizontalOptions = LayoutOptions.Center;
+            }
         }
 
         private static void Puertas(clsRackModel oRack, List<Label> oRackString, List<Image> oImgRack)

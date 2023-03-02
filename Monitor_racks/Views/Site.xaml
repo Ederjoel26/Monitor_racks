@@ -4,5 +4,534 @@
              x:Class="Monitor_racks.Views.Site"
              BackgroundImageSource="fondoaslogic.png"
              Title="Site">
-    <ContentView />
+    <Grid>
+        <ContentView x:Name="cvVertical">
+            <Grid RowDefinitions="25*, 25*, 25*, 25*"
+                      Grid.Row="1"
+                      Margin="3"
+                      ColumnSpacing="5"
+                      RowSpacing="5">
+                <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           CornerRadius="5"
+                           Grid.Row="0">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+
+                    <Grid RowDefinitions="50*, 50*"
+                              ColumnDefinitions="33*, 33*, 33*">
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="0"
+                                  Grid.Column="0">
+                            <Image x:Name="imgRackHumedad1V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackHumedad1V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.RowSpan="2"
+                                  Grid.Column="1">
+                            <Image x:Name="imgRackTemperatura1V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackTemperatura1V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="0"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackPuertas1V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackPuertas1V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="0">
+                            <Image x:Name="imgRackLuz1V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackLuz1V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackElectricidad1V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackElectricidad1V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           CornerRadius="5"
+                           Grid.Row="1">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+
+                    <Grid RowDefinitions="50*, 50*"
+                              ColumnDefinitions="33*, 33*, 33*">
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="0"
+                                  Grid.Column="0">
+                            <Image x:Name="imgRackHumedad2V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackHumedad2V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.RowSpan="2"
+                                  Grid.Column="1">
+                            <Image x:Name="imgRackTemperatura2V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackTemperatura2V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="0"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackPuertas2V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackPuertas2V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="0">
+                            <Image x:Name="imgRackLuz2V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackLuz2V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackElectricidad2V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackElectricidad2V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           CornerRadius="5"
+                           Grid.Row="2">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+
+                    <Grid RowDefinitions="50*, 50*"
+                              ColumnDefinitions="33*, 33*, 33*">
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="0"
+                                  Grid.Column="0">
+                            <Image x:Name="imgRackHumedad3V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackHumedad3V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.RowSpan="2"
+                                  Grid.Column="1">
+                            <Image x:Name="imgRackTemperatura3V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackTemperatura3V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="0"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackPuertas3V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackPuertas3V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="0">
+                            <Image x:Name="imgRackLuz3V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackLuz3V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackElectricidad3V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackElectricidad3V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+
+                <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           CornerRadius="5"
+                           Grid.Row="3">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+
+                    <Grid RowDefinitions="50*, 50*"
+                              ColumnDefinitions="33*, 33*, 33*">
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="0"
+                                  Grid.Column="0">
+                            <Image x:Name="imgRackHumedad4V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackHumedad4V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.RowSpan="2"
+                                  Grid.Column="1">
+                            <Image x:Name="imgRackTemperatura4V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackTemperatura4V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="0"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackPuertas4V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackPuertas4V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="0">
+                            <Image x:Name="imgRackLuz4V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackLuz4V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackElectricidad4V"
+                                       Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackElectricidad4V"
+                                       Grid.Row="1">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ContentView>
+
+        <ContentView x:Name="cvHorizontal">
+            <Grid RowDefinitions="50*, 50*"
+                  ColumnDefinitions="50*, 50*"
+                  Grid.Row="1"
+                  Margin="3"
+                  ColumnSpacing="5"
+                  RowSpacing="5">
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       CornerRadius="5"
+                       Grid.Row="0"
+                       Grid.Column="0">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+
+                    <Grid RowDefinitions="50*, 50*"
+                          ColumnDefinitions="33*, 33*, 33*">
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="0"
+                              Grid.Column="0">
+                            <Image x:Name="imgRackHumedad1H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackHumedad1H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.RowSpan="2"
+                              Grid.Column="1">
+                            <Image x:Name="imgRackTemperatura1H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackTemperatura1H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="0"
+                              Grid.Column="2">
+                            <Image x:Name="imgRackPuertas1H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackPuertas1H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="1"
+                              Grid.Column="0">
+                            <Image x:Name="imgRackLuz1H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackLuz1H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                                  Grid.Row="1"
+                                  Grid.Column="2">
+                            <Image x:Name="imgRackElectricidad1H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackElectricidad1H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       CornerRadius="5"
+                       Grid.Row="1"
+                       Grid.Column="0">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+
+                    <Grid RowDefinitions="50*, 50*"
+                          ColumnDefinitions="33*, 33*, 33*">
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="0"
+                              Grid.Column="0">
+                            <Image x:Name="imgRackHumedad2H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackHumedad2H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.RowSpan="2"
+                              Grid.Column="1">
+                            <Image x:Name="imgRackTemperatura2H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackTemperatura2H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="0"
+                              Grid.Column="2">
+                            <Image x:Name="imgRackPuertas2H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackPuertas2H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="1"
+                              Grid.Column="0">
+                            <Image x:Name="imgRackLuz2H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackLuz2H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="1"
+                              Grid.Column="2">
+                            <Image x:Name="imgRackElectricidad2H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackElectricidad2H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       CornerRadius="5"
+                       Grid.Row="0"
+                       Grid.Column="1">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+
+                    <Grid RowDefinitions="50*, 50*"
+                          ColumnDefinitions="33*, 33*, 33*">
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="0"
+                              Grid.Column="0">
+                            <Image x:Name="imgRackHumedad3H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackHumedad3H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.RowSpan="2"
+                              Grid.Column="1">
+                            <Image x:Name="imgRackTemperatura3H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackTemperatura3H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="0"
+                              Grid.Column="2">
+                            <Image x:Name="imgRackPuertas3H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackPuertas3H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="1"
+                              Grid.Column="0">
+                            <Image x:Name="imgRackLuz3H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackLuz3H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="1"
+                              Grid.Column="2">
+                            <Image x:Name="imgRackElectricidad3H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackElectricidad3H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+
+                <Frame BackgroundColor="White"
+                        BorderColor="Black"
+                        CornerRadius="5"
+                        Grid.Row="1"
+                        Grid.Column="1">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+
+                    <Grid RowDefinitions="50*, 50*"
+                          ColumnDefinitions="33*, 33*, 33*">
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="0"
+                              Grid.Column="0">
+                            <Image x:Name="imgRackHumedad4H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackHumedad4H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.RowSpan="2"
+                              Grid.Column="1">
+                            <Image x:Name="imgRackTemperatura4H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackTemperatura4H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="0"
+                              Grid.Column="2">
+                            <Image x:Name="imgRackPuertas4H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackPuertas4H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="1"
+                              Grid.Column="0">
+                            <Image x:Name="imgRackLuz4H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackLuz4H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                        <Grid RowDefinitions="70*, 30*"
+                              Grid.Row="1"
+                              Grid.Column="2">
+                            <Image x:Name="imgRackElectricidad4H"
+                                   Grid.Row="0">
+                            </Image>
+                            <Label x:Name="lblRackElectricidad4H"
+                                   Grid.Row="1">
+                            </Label>
+                        </Grid>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ContentView>
+    </Grid>
 </ContentPage>

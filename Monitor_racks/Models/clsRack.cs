@@ -9,7 +9,7 @@ namespace Monitor_racks.Models
 {
     public static class clsRack
     {
-        public static void EmpezarEscuchar(string sSiteName, string sRackName, List<Label> oRackString, List<Image> oImgRack)
+        public static void EmpezarEscuchar(string sSiteName, string sRackName, List<Label> oRackString, List<Image> oImgRack, bool fRack)
         {
             CrossCloudFirestore
                .Current
@@ -19,7 +19,7 @@ namespace Monitor_racks.Models
                .AddSnapshotListener((snap, error) =>
                {
                    clsRackModel oRack = snap.ToObject<clsRackModel>();
-                   clsAsignar.Asignacion(oRack, oRackString, oImgRack);
+                   clsAsignar.Asignacion(oRack, oRackString, oImgRack, fRack);
                });
         }
     }

@@ -2,7 +2,196 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Monitor_racks.Views.Rack"
-             BackgroundImageSource="fondoaslogic.png"
-             Title="">
-    <ContentView />
+             BackgroundImageSource="fondoaslogic.png">
+    <Grid>
+        <ContentView x:Name="cvVertical">
+            <Grid ColumnDefinitions="10*, 90*, 10*">
+                <Grid Grid.Column="1"
+                      RowDefinitions="20*, 20*, 20*, 20*, 20*">
+
+                    <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           Grid.Row="0"
+                           Margin="3"
+                           CornerRadius="10">
+                        <Grid RowDefinitions="70*, 30*">
+                            <Image x:Name="imgRackHumedadV"
+                                   Grid.Row="0">
+
+                            </Image>
+                            <Label x:Name="lblRackHumedadV"
+                                   Grid.Row="1">
+
+                            </Label>
+                        </Grid>
+                    </Frame>
+
+                    <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           Grid.Row="1"
+                           Margin="3"
+                           CornerRadius="10">
+                        <Grid RowDefinitions="70*, 30*">
+                            <Image x:Name="imgRackTemperaturaV"
+                                   Grid.Row="0">
+
+                            </Image>
+                            <Label x:Name="lblRackTemperaturaV"
+                                   Grid.Row="1">
+
+                            </Label>
+                        </Grid>
+                    </Frame>
+
+                    <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           Grid.Row="2"
+                           Margin="3"
+                           CornerRadius="10">
+                        <Grid RowDefinitions="70*, 30*">
+                            <Image x:Name="imgRackPuertasV"
+                                   Grid.Row="0">
+
+                            </Image>
+                            <Label x:Name="lblRackPuertasV"
+                                   Grid.Row="1">
+
+                            </Label>
+                        </Grid>
+                    </Frame>
+
+                    <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           Grid.Row="3"
+                           Margin="3"
+                           CornerRadius="10">
+                        <Grid RowDefinitions="70*, 30*">
+                            <Image x:Name="imgRackLuzV"
+                                   Grid.Row="0">
+
+                            </Image>
+                            <Label x:Name="lblRackLuzV"
+                                   Grid.Row="1">
+
+                            </Label>
+                        </Grid>
+                    </Frame>
+
+                    <Frame BackgroundColor="White"
+                           BorderColor="Black"
+                           Grid.Row="4"
+                           Margin="3"
+                           CornerRadius="10">
+                        <Grid RowDefinitions="70*, 30*">
+                            <Image x:Name="imgRackElectricidadV"
+                                   Grid.Row="0">
+
+                            </Image>
+                            <Label x:Name="lblRackElectricidadV"
+                                   Grid.Row="1">
+
+                            </Label>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </Grid>
+        </ContentView>
+
+        <ContentView x:Name="cvHorizontal">
+            <Grid Grid.Column="1"
+                  RowDefinitions="50*, 50*"
+                  ColumnDefinitions="33*, 33*, 33*">
+
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Margin="3"
+                       CornerRadius="10">
+                    <Grid RowDefinitions="70*, 30*">
+                        <Image x:Name="imgRackHumedadH"
+                               Grid.Row="0">
+
+                        </Image>
+                        <Label x:Name="lblRackHumedadH"
+                               Grid.Row="1">
+
+                        </Label>
+                    </Grid>
+                </Frame>
+
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       Grid.RowSpan="2"
+                       Grid.Column="1"
+                       Margin="3"
+                       CornerRadius="10">
+                    <Grid RowDefinitions="70*, 30*">
+                        <Image x:Name="imgRackTemperaturaH"
+                                   Grid.Row="0">
+
+                        </Image>
+                        <Label x:Name="lblRackTemperaturaH"
+                                   Grid.Row="1">
+
+                        </Label>
+                    </Grid>
+                </Frame>
+
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="2"
+                       Margin="3"
+                       CornerRadius="10">
+                    <Grid RowDefinitions="70*, 30*">
+                        <Image x:Name="imgRackPuertasH"
+                               Grid.Row="0">
+
+                        </Image>
+                        <Label x:Name="lblRackPuertasH"
+                               Grid.Row="1">
+
+                        </Label>
+                    </Grid>
+                </Frame>
+
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Margin="3"
+                       CornerRadius="10">
+                    <Grid RowDefinitions="70*, 30*">
+                        <Image x:Name="imgRackLuzH"
+                               Grid.Row="0">
+
+                        </Image>
+                        <Label x:Name="lblRackLuzH"
+                               Grid.Row="1">
+
+                        </Label>
+                    </Grid>
+                </Frame>
+
+                <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       Grid.Row="1"
+                       Grid.Column="2"
+                       Margin="3"
+                       CornerRadius="10">
+                    <Grid RowDefinitions="70*, 30*">
+                        <Image x:Name="imgRackElectricidadH"
+                               Grid.Row="0">
+
+                        </Image>
+                        <Label x:Name="lblRackElectricidadH"
+                               Grid.Row="1">
+
+                        </Label>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ContentView>
+    </Grid>
 </ContentPage>
