@@ -1,5 +1,10 @@
 using Plugin.Fingerprint.Abstractions;
 using Plugin.Fingerprint;
+using Microsoft.Maui;
+using Android.Content.Res;
+using Android.InputMethodServices;
+using Android.Views.InputMethods;
+using Android.Content;
 
 namespace Monitor_racks.Views;
 
@@ -116,8 +121,8 @@ public partial class Login : ContentPage
             Margin = 2
         };
 
-        btnEntrar.Clicked += (sender, e) => Button_Clicked(sender, e);
-        btnHuella.Clicked += (sender, e) => Button_Clicked_1(sender, e);
+        btnEntrar.Clicked += Button_Clicked;
+        btnHuella.Clicked += Button_Clicked_1;
 
         gContainer.Add(lblTitulo, 0, 0);
         gContainer.Add(eUsuario, 0, 1);
@@ -151,6 +156,7 @@ public partial class Login : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
+        HideKeyboard();
         const string Usuario = "test";
         const string Contra = "test";
         if (eUsuario.Text == Usuario && eContra.Text == Contra)
@@ -168,5 +174,18 @@ public partial class Login : ContentPage
     private void Button_Clicked_1(object sender, EventArgs e)
     {
         checkAvaliable();
+    }
+
+    private void HideKeyboard()
+    {
+        var context = Platform.AppContext;
+        var inputMethodManager = context.GetSystemService(Context.InputMethodService) as InputMethodManager;
+        if (inputMethodManager != null)
+        {
+            var activity = Platform.CurrentActivity;
+            var token = activity.CurrentFocus?.WindowToken;
+            inputMethodManager.HideSoftInputFromWindow(token, HideSoftInputFlags.None);
+            activity.Window.DecorView.ClearFocus();
+        }
     }
 }
